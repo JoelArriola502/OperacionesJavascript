@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular el Limite</title>
+   <link rel="stylesheet" href="./css/Limite.css">
+  <script type="text/javascript">
+    function Calcular(){
+        let num1=document.getElementById("n1").value;
+        let num2=document.getElementById("n2").value;
+        let num3=document.getElementById("n3").value;
+        let num4=document.getElementById("n4").value;
+        let num5=document.getElementById("n5").value;
+        let num6=document.getElementById("n6").value;
+        let ele=Math.pow(num4,num2); 
+        let mul=num1*ele;
+        let sum=(mul+(num3*num4));
+
+        let ele2=Math.pow(num4,num5);
+        let  res=ele2-num6;
+
+        let resul=sum/res;
+
+
+        document.getElementById("resul").textContent="Resultado "+resul;
+    }
+
+  </script>
+
+</head>
+<body>
+    <div class="principal">
+        <div class="texto">
+            <h1 class="Titulo">Calcular el limite</h1> 
+            <label class="Lim">Lim nX <sup>n</sup>+nX</label>
+            <label  class="Lim">X→n X <sup>n</sup>- n</label>
+        </div>
+       
+    
+        <div class="limite">
+            
+
+            <label class="limi">Lim <input type="text" id="n1">X <sup><input type="text" id="n2"></sup> + <input type="text " id="n3">X</label>
+            <label class="limi2">X→ <input type="text" id="n4"> X <sup><input type="text" id="n5"></sup>- <input type="text" id="n6"></label>
+            <button onclick="Calcular()">Calcular</button>
+            <ul>
+                <li><a href="./Principal.html">VOLVER AL INICIO</a></li>
+            </ul>
+            <p id="resul"></p>
+        </div>
+       
+    </div>
+</body>
+</html>

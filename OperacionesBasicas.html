@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Simples</title>
+    <link rel="stylesheet" href="./css/styleOperacionesBasicas.css">
+  
+    <script type="text/javascript">
+        function Limpiarr(){
+            document.getElementById("n1").value="";
+            document.getElementById("n2").value="";
+        }
+        function Condicion(){
+            let op=parseFloat(document.getElementById("op").value);
+            let Num1=parseFloat(document.getElementById("n1").value);
+            let Num2=parseFloat(document.getElementById("n2").value);
+           if((Num1<0||Num1>=0)||(Num2<0||Num2>=0)){
+            switch(op){
+                case 1:
+                    Multiplicacion();
+                    break;
+                
+                case 2:
+                
+                    Division();
+                    break;
+                
+                case 3:
+                    Suma();
+                    break;
+                
+                case 4:
+                    Resta();
+                    break;
+
+               default:
+                    document.getElementById("Res").textContent="Ingrese Opcion Correcta";
+               
+
+            }
+
+           }else{
+            document.getElementById("Res").textContent="Ingrese Numeros"
+           }
+           
+
+        }
+        function Multiplicacion(){
+            let Num1=parseFloat(document.getElementById("n1").value);
+            let Num2=parseFloat(document.getElementById("n2").value);
+            var Resu=Num1*Num2;
+            document.getElementById("Res").textContent = "Resultado: " + Resu;
+            Limpiarr();
+
+          }
+          function Division(){
+            let Num1=parseFloat(document.getElementById("n1").value);
+            let Num2=parseFloat(document.getElementById("n2").value);
+            var Resu=Num1/Num2;
+            document.getElementById("Res").textContent = "Resultado: " + Resu;
+            Limpiarr();
+          }
+          function Suma(){
+            let Num1=parseFloat(document.getElementById("n1").value);
+            let Num2=parseFloat(document.getElementById("n2").value);
+            var Resu=Num1+Num2;
+            document.getElementById("Res").textContent = "Resultado: " + Resu;
+            Limpiarr();
+          }
+      
+          function Resta(){
+            let Num1=parseFloat(document.getElementById("n1").value);
+            let Num2=parseFloat(document.getElementById("n2").value);
+
+            var Resu=Num1-Num2;
+            document.getElementById("Res").textContent = "Resultado: " + Resu;
+            Limpiarr();
+          }
+
+    </script>
+</head>
+<body>
+    <div class="Principal">
+        <div class="formulario">
+ 
+        <label>Ingrese Primer Numero<input type="text" id="n1" onclick="Limpiar()"></label>
+        <label>Ingrese Segundo Numero<input type="text" id="n2" onclick="Limpiar()"></label>
+       <label>Ingrese la opcion <input type="text" id="op"></label>
+        <button onclick="Condicion()">Calcular</button>
+
+    <p id="Res"></p>
+  </div>
+  <div class="Opciones">
+    <h3>Opciones Disponibles</h3>
+    <p>(1): Multiplicacion</p>
+    <p>(2): Division</p>
+    <p>(3): Suma</p>
+    <p>(4): Resta</p>
+    <ul>
+      <li> <a href="./Principal.html">VOlVER INICIO</a></li>
+    </ul>
+  
+
+
+  </div>
+   </div>
+</body>
+</html>

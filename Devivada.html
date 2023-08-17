@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculo de Derivada</title>
+  <link rel="stylesheet" href="./css/Derivada.css">
+
+  <script type="text/javascript">
+    function Calcular(){
+      let num1=document.getElementById("n").value;
+      let num2=document.getElementById("n2").value;
+      let numve=Number(document.getElementById("n2").value);
+
+
+      let Calcular=num1*num2;
+      let dis=num2-1;
+      
+      document.getElementById("Res").textContent="F(X)="+Calcular;
+      document.getElementById("dis").textContent="X^"+dis;
+    }
+  
+  </script>
+</head>
+<body>
+  <div class="Principal">
+    <div class="ingreso">
+
+      <h1 class="Titulo">F(x)=nX<sup>n</sup></h1>
+      <label >F(X)=<input type="text" id="n">X<sup><input type="text" id="n2"></sup></label>
+      <button onclick="Calcular()">Calcular</button>
+      <ul>
+        <li><a href="./Principal.html">VOLVER INICIO</a></li>
+      </ul>
+    </div>
+    <div class="res">
+    
+      <p id="Res"><p id="dis"></p></p>
+    </div>
+
+  </div>
+</body>
+</html>
+
+
+
+
+
+

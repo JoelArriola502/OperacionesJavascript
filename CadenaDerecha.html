@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadena de derecha</title>
+    <link rel="stylesheet" href="./css/Cadena.css">
+    <script type="text/javascript">
+        function Recorrer() {
+            let Cadena=String(document.getElementById("ca").value);
+            let cadenaOrdenada = ordenarCadena(Cadena);
+            document.getElementById("Resul").textContent="Resultado "+cadenaOrdenada;
+            
+                }
+
+        function ordenarCadena(cadena) {
+            let caracteres = cadena.split('');
+            let longitud = caracteres.length;
+            
+            for (let i = 0; i < longitud - 1; i++) {
+                for (let j = i + 1; j < longitud; j++) {
+                   
+                        let temp = caracteres[i];
+                        caracteres[i] = caracteres[j];
+                        caracteres[j] = temp;
+                    
+                }
+            }
+            
+            return caracteres.join('');
+        }
+
+        function RecorrerIzquierda() {
+            let Cadena=String(document.getElementById("ca").value);
+            let cadenaOrdenada = ordenarCadenaIzquierda(Cadena);
+            document.getElementById("Resul").textContent="Resultado "+cadenaOrdenada;
+            
+                }
+
+        function ordenarCadenaIzquierda(cadena) {
+            let caracteres = cadena.split('');
+            let longitud = caracteres.length;
+            
+            for (let i = 0; i < longitud - 1; i++) {
+                for (let j = i + 1; j < longitud; j++) {
+                   
+                        let temp = caracteres[i];
+                        caracteres[i] = caracteres[j];
+                        caracteres[i] = temp;
+                    
+                }
+            }
+            
+            return caracteres.join('');
+        }
+        function Eliminar() {
+            let Cadena=String(document.getElementById("ca").value);
+            let Eliminar=String(document.getElementById("Eliminacion").value);
+            let cadenaE = Cadena;
+            let CaracterEliminado = cadenaE.replace(new RegExp(Eliminar, 'g'), '');
+            document.getElementById("Resul").textContent="Resultado:  "+CaracterEliminado;
+            limpiar();
+           
+        }
+        function Revertir() {
+            let Cadena =String(document.getElementById("ca").value);
+            let AgregarC =String(document.getElementById("Eliminacion").value);
+            let CaracterA = Cadena;
+            let cadenaRevertida = CaracterA + AgregarC;
+            document.getElementById("Resul").textContent="Resultado:  "+cadenaRevertida;
+        }
+        function limpiar(){
+            let Eli=String(document.getElementById("Eliminacion").value="")
+        }
+
+    </script>
+</head>
+<body>
+    <div class="principal">
+        <div class="ingreso">
+            <label > Ingrese Cadena <input type="text" id="ca"></label>
+            <label >Ingrese Caracter a Eliminar <input type="text" id="Eliminacion"></label>
+            <ul>
+                <li><a href="./Principal.html">VOLVER AL INICIO</a></li>
+            </ul>
+            <p id="Resul"></p>
+        </div>
+        <div class="botones">
+            <button onclick="Recorrer()">Derecha a Izquierda</button>
+            <button onclick="RecorrerIzquierda()">Izquierda a Derecha</button>
+            <button onclick="Eliminar()">Eliminar Caracter</button>
+            <button onclick="Revertir()">Revertir Estado</button>
+        </div>
+    </div>
+</body>
+</html>
